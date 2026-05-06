@@ -1,13 +1,8 @@
-# Language Game
+# *Language Game*: Talking to Non-human Systems
 
 Language carries thought and coordination among humans but rarely reaches further along the spectrum of diverse intelligence. Yet non-neural systems - from gene regulatory networks and microbial consortia to fungi - are increasingly recognized as substrates of computation, decision-making and memory, making dialogue with non-human intelligence newly conceivable. Today such dialogue is attempted only by proxy: a large language model speaks on the system's behalf, so any intelligence on display originates from the model while the system itself remains silent. Here we ask whether the system can speak in its own voice. Following Wittgenstein, who located meaning in use, we treat communication as a game played with the system. Its internal dynamics are frozen as the nonlinear core of a reinforcement-learning policy, with only linear input and output interfaces trained. Through use and reward, the system's states and responses acquire meaning within the game, so playing becomes speaking. Because different architectures playing the same game optimize the same reward, their behaviors can all be read as pursuit of that reward; the game serves as a \textit{lingua franca} across otherwise irreconcilable representations. Given a human prompt, a language model routes it to the game whose semantics best match it and designs an environmental state for which the desired action is the rational response, letting the system reply through its own behavior. Applied across diverse gene regulatory networks and reinforcement-learning tasks, the framework yields fluent dialogue without altering any system parameter, shows that well-trained agents of disparate origin converge on similar behavior, and reveals that specific GRN properties make a system easier or harder to talk with - an inductive bias of the reservoir itself. Our framework opens a new route to conversing with any dynamical system on its own terms.
 
-## Requirements
-
-- Python 3.11 or newer
-- `uv`
-- Linux is recommended for MuJoCo, Atari, and Box2D environments
-- `swig` is required for Box2D environments such as `LunarLander-v3` and `BipedalWalker-v3`
+## Quick Start
 
 Install dependencies:
 
@@ -20,28 +15,6 @@ If using Box2D environments on Ubuntu/Debian:
 ```bash
 sudo apt-get install -y swig
 ```
-
-## Repository Layout
-
-```text
-src/
-  train_agent.py                 PPO training entry point
-  plot_rewards.py                Reward-curve plotting
-  rational_agent.py              Policy-similarity analysis
-  run_talk_examples.py           Language-game example runner
-  core/                          Environment, policy, and video utilities
-  odes/                          ODE and GRN reservoir definitions
-  semantic/                      Semantic primitive analyses
-  talk/                          Talk-to-GRN interaction modules
-  tools/                         Diagnostics, plotting, and utility scripts
-  scripts/                       Reproducible experiment shell scripts
-pyproject.toml                   Project dependencies
-uv.lock                          Locked dependency versions
-.python-version                  Python version hint
-```
-
-
-## Main Experiments
 
 Run the following script will train the full matrix of agents on different environments and reservoirs, plot their reward curves, and run the rational-agent analysis:
 
