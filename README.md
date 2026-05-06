@@ -10,12 +10,6 @@ Install dependencies:
 uv sync
 ```
 
-If using Box2D environments on Ubuntu/Debian:
-
-```bash
-sudo apt-get install -y swig
-```
-
 Run the following script will train the full matrix of agents on different environments and reservoirs, plot their reward curves, and run the rational-agent analysis:
 
 ```bash
